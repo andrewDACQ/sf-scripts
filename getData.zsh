@@ -4,7 +4,7 @@
 # Note: You need to have a $TARGET_ORG set
 # TODO: Add date to filenames 
 
-echo 'Pulling data from Salesforce org...'
+echo 'Pulling 200 entries of standard sObjects from Salesforce org...'
 
 sf data query -q 'SELECT FIELDS(ALL) FROM Lead LIMIT 200' -o $TARGET_ORG --json > Lead.json
 sf data query -q 'SELECT FIELDS(ALL) FROM Account LIMIT 200' -o $TARGET_ORG --json > Account.json
